@@ -13,6 +13,7 @@
 @media(max-width:700px){.topbar{height:65px;padding:0 15px}.brand{font-size:18px}.logo{width:35px;height:35px}.top-actions{gap:6px}.outline-btn{padding:0 9px;min-height:37px;font-size:11px}.icon-btn{width:38px;min-height:37px}.layout{padding:20px 14px 25px}.page-heading{align-items:center}.page-heading h1{font-size:25px}.page-heading p{font-size:11px}.page-heading .primary-btn{padding:11px 12px;font-size:11px}.cards{gap:10px}.stat-card{padding:14px;border-radius:16px}.stat-top{font-size:10px;align-items:flex-start}.stat-icon{width:31px;height:31px;border-radius:10px}.stat-value{font-size:21px;margin:14px 0 7px}.stat-foot{font-size:10px}.dashboard-grid{grid-template-columns:1fr;gap:13px}.panel{padding:16px;border-radius:17px}.chart{height:160px}.table-wrap{margin:0 -6px}td{padding:12px 8px}th{padding:0 8px 12px}.category-cell{gap:7px}.transaction-icon{width:31px;height:31px}.row-actions{gap:3px}.mini-btn{width:27px;height:27px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.modal{padding:19px;border-radius:19px}.settings-grid{grid-template-columns:1fr}.toast{bottom:90px;max-width:calc(100vw - 30px);white-space:nowrap}.sidebar-note{display:none}}
 @media(max-width:370px){.cards{grid-template-columns:1fr 1fr}.stat-value{font-size:19px}.top-actions .outline-btn{display:none}.page-heading h1{font-size:22px}.page-heading .primary-btn{padding:10px}.mobile-nav .nav-item{padding:7px 8px}}
 </style>
+<link rel="manifest" href="./manifest.json">
 </head>
 <body>
 <div class="app" id="app">
@@ -64,4 +65,16 @@ document.addEventListener('wheel', function (e) {
         input.blur();
     }
 });
-</script></div></body></html>
+</script></div>
+<!-- Offline/PWA support: added without changing existing Finoram functions or UI. -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./service-worker.js").catch(function (error) {
+      console.error("Finoram offline setup failed:", error);
+    });
+  });
+}
+</script>
+
+</body></html>
