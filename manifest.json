@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "Finoram - Personal Finance",
-  "short_name": "Finoram",
+  "name": "Finoram",
+  "short_name": "Webapp",
   "description": "Personal finance tracking for income, expenses, savings, and loans.",
   "start_url": "./",
   "scope": "./",
